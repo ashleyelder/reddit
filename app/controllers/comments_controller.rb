@@ -31,11 +31,6 @@ class CommentsController < ApplicationController
     @comment.destroy
   end
 
-  def edit
-    post = Post.find(params[:post_id])
-    @comment = Comment.find(params[:id])
-  end
-
   def update
     @comment = Comment.find(params[:id])
     @comment.update(body: "deleted", user_id: nil)
