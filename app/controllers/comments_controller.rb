@@ -3,10 +3,6 @@ class CommentsController < ApplicationController
   before_action :authenticate_owner, only: [:destroy]
   before_action :find_parent
 
-  def show
-    @comment = @parent.comments.new comment_params
-  end
-
   def create
     @comment = @parent.comments.new(comment_params)
     @comment.user = current_user

@@ -1,15 +1,11 @@
 class VotesController < ApplicationController
 
-  def new
-    @vote = Vote.new
-  end
-
   def create
     @vote = Vote.new(vote_params)
       if @vote.save
         redirect_to request.referrer
       else
-        redirect_back(fallback_location: root_path)
+        redirect_to request.referrer
         flash[:notice] = "you already voted"
       end
   end
