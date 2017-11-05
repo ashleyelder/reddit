@@ -3,3 +3,4 @@ config/secrets.yml
 tmp/
 log/
 .DS_Store
+elasticsearch.log

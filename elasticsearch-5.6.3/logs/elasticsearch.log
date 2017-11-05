@@ -24,3 +24,34 @@
 [2017-11-04T19:14:39,766][INFO ][o.e.h.n.Netty4HttpServerTransport] [NxGnc5R] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
 [2017-11-04T19:14:39,767][INFO ][o.e.n.Node               ] [NxGnc5R] started
 [2017-11-04T19:14:39,777][INFO ][o.e.g.GatewayService     ] [NxGnc5R] recovered [0] indices into cluster_state
+[2017-11-04T19:35:09,356][INFO ][o.e.n.Node               ] [] initializing ...
+[2017-11-04T19:35:09,441][INFO ][o.e.e.NodeEnvironment    ] [NxGnc5R] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [403.5gb], net total_space [464.7gb], spins? [unknown], types [hfs]
+[2017-11-04T19:35:09,441][INFO ][o.e.e.NodeEnvironment    ] [NxGnc5R] heap size [1.9gb], compressed ordinary object pointers [true]
+[2017-11-04T19:35:09,443][INFO ][o.e.n.Node               ] node name [NxGnc5R] derived from node ID [NxGnc5ROR8yzCR6Ukq9Vhw]; set [node.name] to override
+[2017-11-04T19:35:09,443][INFO ][o.e.n.Node               ] version[5.6.3], pid[70504], build[1a2f265/2017-10-06T20:33:39.012Z], OS[Mac OS X/10.12.6/x86_64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/9.0.1/9.0.1+11]
+[2017-11-04T19:35:09,443][INFO ][o.e.n.Node               ] JVM arguments [-Xms2g, -Xmx2g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -Djdk.io.permissionsUseCanonicalPath=true, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j.skipJansi=true, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/Users/ashleyelder/reddit/elasticsearch-5.6.3]
+[2017-11-04T19:35:10,020][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [aggs-matrix-stats]
+[2017-11-04T19:35:10,020][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [ingest-common]
+[2017-11-04T19:35:10,020][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [lang-expression]
+[2017-11-04T19:35:10,020][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [lang-groovy]
+[2017-11-04T19:35:10,020][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [lang-mustache]
+[2017-11-04T19:35:10,020][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [lang-painless]
+[2017-11-04T19:35:10,021][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [parent-join]
+[2017-11-04T19:35:10,021][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [percolator]
+[2017-11-04T19:35:10,021][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [reindex]
+[2017-11-04T19:35:10,021][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [transport-netty3]
+[2017-11-04T19:35:10,021][INFO ][o.e.p.PluginsService     ] [NxGnc5R] loaded module [transport-netty4]
+[2017-11-04T19:35:10,022][INFO ][o.e.p.PluginsService     ] [NxGnc5R] no plugins loaded
+[2017-11-04T19:35:11,034][INFO ][o.e.d.DiscoveryModule    ] [NxGnc5R] using discovery type [zen]
+[2017-11-04T19:35:11,406][INFO ][o.e.n.Node               ] initialized
+[2017-11-04T19:35:11,406][INFO ][o.e.n.Node               ] [NxGnc5R] starting ...
+[2017-11-04T19:35:11,584][INFO ][o.e.t.TransportService   ] [NxGnc5R] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2017-11-04T19:35:14,638][INFO ][o.e.c.s.ClusterService   ] [NxGnc5R] new_master {NxGnc5R}{NxGnc5ROR8yzCR6Ukq9Vhw}{gkP3ijqzTI-D1Orgj_DYOg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[2017-11-04T19:35:14,657][INFO ][o.e.h.n.Netty4HttpServerTransport] [NxGnc5R] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2017-11-04T19:35:14,657][INFO ][o.e.n.Node               ] [NxGnc5R] started
+[2017-11-04T19:35:14,669][INFO ][o.e.g.GatewayService     ] [NxGnc5R] recovered [0] indices into cluster_state
+[2017-11-04T19:35:20,314][INFO ][o.e.c.m.MetaDataCreateIndexService] [NxGnc5R] [.kibana] creating index, cause [api], templates [], shards [1]/[1], mappings [_default_, index-pattern, server, visualization, search, timelion-sheet, config, dashboard, url]
+[2017-11-04T19:37:51,185][INFO ][o.e.n.Node               ] [NxGnc5R] stopping ...
+[2017-11-04T19:37:51,244][INFO ][o.e.n.Node               ] [NxGnc5R] stopped
+[2017-11-04T19:37:51,245][INFO ][o.e.n.Node               ] [NxGnc5R] closing ...
+[2017-11-04T19:37:51,251][INFO ][o.e.n.Node               ] [NxGnc5R] closed
