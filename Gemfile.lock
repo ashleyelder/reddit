@@ -99,6 +99,11 @@ GEM
       ansi
       elasticsearch
       ruby-prof
+    elasticsearch-model (5.0.1)
+      activesupport (> 3)
+      elasticsearch (~> 5)
+      hashie
+    elasticsearch-rails (5.0.1)
     elasticsearch-transport (5.0.4)
       faraday
       multi_json
@@ -131,6 +136,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    hashie (3.5.6)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -295,6 +301,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   elasticsearch-extensions
+  elasticsearch-model
+  elasticsearch-rails
   factory_bot_rails
   faker
   guard-rspec

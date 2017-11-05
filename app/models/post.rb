@@ -1,4 +1,8 @@
+require 'elasticsearch/model'
+
 class Post < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
   belongs_to :user, optional: true
   has_many :comments, as: :parent
   has_many :votes, as: :parent
@@ -24,3 +28,5 @@ class Post < ApplicationRecord
     Comment.where(post_id:self).size
   end
 end
+
+Post.import force: true
