@@ -4,3 +4,4 @@ tmp/
 log/
 .DS_Store
 elasticsearch.log
+elasticsearch-5.6.3/data/nodes

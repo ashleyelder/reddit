@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'posts/new_link', to: 'posts#new_link'
   post 'posts/new_text', to: 'posts#create_text'
   post 'posts/new_link', to: 'posts#create_link'
+  get 'search', to: 'search#search'
 
   root 'posts#index'
 
