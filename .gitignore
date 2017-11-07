@@ -3,5 +3,11 @@ config/secrets.yml
 tmp/
 log/
 .DS_Store
-elasticsearch.log
-elasticsearch-5.6.3/data/nodes
+*.log
+*.st
+*.ckp
+*.tlog
+*.cfe
+*.si
+*.cfs
+elasticsearch-5.6.3/config/elasticsearch.yml

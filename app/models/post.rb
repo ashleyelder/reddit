@@ -28,5 +28,3 @@ class Post < ApplicationRecord
     Comment.where(post_id:self).size
   end
 end
-
-Post.import force: true
