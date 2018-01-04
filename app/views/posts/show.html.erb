@@ -11,6 +11,7 @@
     <%= link_to @post.url do %>
       <%= simple_format @post.title %>
     <% end %>
+    <%= image_tag @post.url, :height => '550px' %>
   <% else %>
     <%= simple_format @post.title %>
     <% end %>
