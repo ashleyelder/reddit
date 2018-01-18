@@ -2,6 +2,7 @@
 @import "bootstrap";
 
 /* universal */
+
   body {
     padding-top: 60px;
   }
@@ -38,6 +39,15 @@
   .down {
       transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
+  }
+
+/* sidebar */
+
+  .sidebar {
+    width: 20%;
+    margin-right: 0px;
+    margin-left: auto;
+    float: right;
   }
 
 /* typography */
@@ -135,8 +145,15 @@
   }
 
 /* index */
-.post_count {
-  padding: 7px;
-  color: gray;
-}
+
+  .index {
+    width: 80%;
+    margin-right: auto;
+    margin-left: 0px;
+  }
+
+  .post_count {
+    padding: 7px;
+    color: gray;
+  }
 

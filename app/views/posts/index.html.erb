@@ -1,62 +1,72 @@
-<% if logged_in? %>
-  <%= button_to 'submit a new text post', {controller: 'posts', action: 'new_text'}, method: :get, class:'button' %><br/>
-  <%= button_to 'submit a new link', {controller: 'posts', action: 'new_link'}, method: :get, class:'button' %>
-<% end %>
-
-<table>
-  <% count = ((@page.to_i - 1)*@posts_per_page) %>
-  <% @posts.each do |post| %>
+<div class="sidebar">
+  <table>
     <tr>
-    <% count += 1 %>
-      <td class="post_count"><%= count %></td>
-      <td class="h3"><%= post.score_total %></td>
       <td>
-        <div class="vote">
-          <%= form_for Vote.new do |f| %>
-            <%= f.hidden_field "parent_type", :value => Post %>
-            <%= f.hidden_field "parent_id", :value => post.id %>
-            <% if current_user %>
-              <%= f.hidden_field "user_id", :value => current_user.id %>
-            <% end %>
-            <%= f.hidden_field "score", :value => 1.to_i %>
-            <%= f.button :submit do %>
-              <i class="arrow up"></i>
-            <% end %>
-          <% end %>
-
-          <%= form_for Vote.new do |f| %>
-            <%= f.hidden_field "parent_type", :value => Post %>
-            <%= f.hidden_field "parent_id", :value => post.id %>
-            <% if current_user %>
-              <%= f.hidden_field "user_id", :value => current_user.id %>
-            <% end %>
-            <%= f.hidden_field "score", value: -1 %>
-            <%= f.button :submit do %>
-              <i class="arrow down"></i>
-            <% end %>
-          <% end %>
-       </div>
-     </td>
-      <td><%= image_tag("textpost.png", size: "60x60", alt: "Text Post") %></td>
-      <td>
-        <% if post.try(:url) %>
-          <%= link_to post.title, post.url %>
-            <% else %>
-          <%= link_to post.title, post_path(post)%>
-        <% end %>
-        <%="submitted #{time_ago_in_words(post.created_at)} ago by "%>
-        <% if post.user.nil? %>
-        <%= "[deleted]" %>
-        <% else %>
-        <%= link_to post.user.username, controller: "users", action: "show", id: post.user %>
-        <% end %>
-        <div class="bottom-links">
-          <%= simple_format link_to post.comment_count.to_s + " comment".pluralize(post.comments.count), post_path(post) %>
-        </div>
+      <% if logged_in? %>
+        <%= button_to 'submit a new text post', {controller: 'posts', action: 'new_text'}, method: :get, class:'button' %><br/>
+        <%= button_to 'submit a new link', {controller: 'posts', action: 'new_link'}, method: :get, class:'button' %>
+      <% end %>
       </td>
     </tr>
-  <% end %>
-</table>
+  </table>
+</div>
+
+<div class="index">
+  <table>
+    <% count = ((@page.to_i - 1)*@posts_per_page) %>
+    <% @posts.each do |post| %>
+      <tr>
+      <% count += 1 %>
+        <td class="post_count"><%= count %></td>
+        <td class="h3"><%= post.score_total %></td>
+        <td>
+          <div class="vote">
+            <%= form_for Vote.new do |f| %>
+              <%= f.hidden_field "parent_type", :value => Post %>
+              <%= f.hidden_field "parent_id", :value => post.id %>
+              <% if current_user %>
+                <%= f.hidden_field "user_id", :value => current_user.id %>
+              <% end %>
+              <%= f.hidden_field "score", :value => 1.to_i %>
+              <%= f.button :submit do %>
+                <i class="arrow up"></i>
+              <% end %>
+            <% end %>
+
+            <%= form_for Vote.new do |f| %>
+              <%= f.hidden_field "parent_type", :value => Post %>
+              <%= f.hidden_field "parent_id", :value => post.id %>
+              <% if current_user %>
+                <%= f.hidden_field "user_id", :value => current_user.id %>
+              <% end %>
+              <%= f.hidden_field "score", value: -1 %>
+              <%= f.button :submit do %>
+                <i class="arrow down"></i>
+              <% end %>
+            <% end %>
+         </div>
+       </td>
+        <td><%= image_tag("textpost.png", size: "60x60", alt: "Text Post") %></td>
+        <td>
+          <% if post.try(:url) %>
+            <%= link_to post.title, post.url %>
+              <% else %>
+            <%= link_to post.title, post_path(post)%>
+          <% end %>
+          <%="submitted #{time_ago_in_words(post.created_at)} ago by "%>
+          <% if post.user.nil? %>
+          <%= "[deleted]" %>
+          <% else %>
+          <%= link_to post.user.username, controller: "users", action: "show", id: post.user %>
+          <% end %>
+          <div class="bottom-links">
+            <%= simple_format link_to post.comment_count.to_s + " comment".pluralize(post.comments.count), post_path(post) %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 
 <div id = "page_nav">
   <% if @page.to_i > 1 %>
@@ -66,3 +76,4 @@
     <%= link_to 'Next', posts_path(page: (@page.to_i + 1)) %>
   <% end %>
 </div>
+
