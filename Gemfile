@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'pg'
+gem 'pg', '~> 0.18'
 gem 'bootstrap-sass', '3.3.6'
 gem 'jquery-rails'
 gem 'capistrano', '~> 3.7', '>= 3.7.1'
@@ -44,6 +44,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'elasticsearch-model'
   gem 'elasticsearch-rails'
+  gem 'link_thumbnailer'
 end
 
 group :test do
