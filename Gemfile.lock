@@ -143,8 +143,6 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashie (3.5.7)
-    httparty (0.15.6)
-      multi_xml (>= 0.5.2)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     image_info (1.1.2)
@@ -185,7 +183,6 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.1)
     multi_json (1.13.1)
-    multi_xml (0.6.0)
     multipart-post (2.0.0)
     nenv (0.3.0)
     net-http-persistent (3.0.0)
@@ -346,7 +343,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   guard-rspec
-  httparty
   jbuilder (~> 2.5)
   jquery-rails
   launchy

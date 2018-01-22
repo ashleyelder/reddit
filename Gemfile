@@ -44,7 +44,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'elasticsearch-model'
   gem 'elasticsearch-rails'
-  gem 'httparty'
   gem 'link_thumbnailer'
 end
 
