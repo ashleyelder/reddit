@@ -1,3 +1,5 @@
+require 'link_thumbnailer'
+
 class PostsController < ApplicationController
   before_action :authenticate_logged_in, only: [:new_text, :new_link, :create]
   before_action :authenticate_owner, only: [:destroy]
@@ -16,11 +18,16 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def image_url
+    @post.image_url = LinkThumbnailer.generate(@post.url).images.first.src.to_s
+  end
+
   def show
   end
 
   def create_link
     @post = current_user.posts.build(post_params)
+    image_url
     if @post.save
       @vote = Vote.create(user_id: @post.user_id, parent_type: "Post", parent_id: @post.id, score: 1)
       redirect_to @post
@@ -55,7 +62,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-		  params.require(:post).permit(:title, :text, :vote, :url, :subreddit)
+		  params.require(:post).permit(:title, :text, :vote, :url, :subreddit, :image_url)
 	  end
 
     def set_page
