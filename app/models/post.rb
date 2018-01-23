@@ -1,4 +1,8 @@
+require 'elasticsearch/model'
+
 class Post < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
   belongs_to :user, optional: true
   has_many :comments, as: :parent
   has_many :votes, as: :parent
