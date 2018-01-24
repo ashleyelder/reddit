@@ -36,8 +36,6 @@ gem 'capistrano', '~> 3.7', '>= 3.7.1'
 gem 'capistrano-rails', '~> 1.2'
 gem 'capistrano-passenger', '~> 0.2.0'
 gem 'capistrano-rbenv', '~> 2.1'
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
 gem 'link_thumbnailer'
 
 group :development, :test do
@@ -45,9 +43,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_bot_rails'
-  gem 'elasticsearch-model'
-  gem 'elasticsearch-rails'
-  gem 'link_thumbnailer'
 end
 
 group :test do
@@ -57,7 +52,6 @@ group :test do
   gem 'guard-rspec'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'elasticsearch-extensions'
 end
 
 group :development do
