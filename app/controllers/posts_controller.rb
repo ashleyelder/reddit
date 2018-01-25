@@ -22,14 +22,15 @@ class PostsController < ApplicationController
     @post.image_url = LinkThumbnailer.generate(@post.url).images.first.src.to_s
   end
 
-  def show
+  def vote
+    Vote.create(user_id: @post.user_id, parent_type: "Post", parent_id: @post.id, score: 1)
   end
 
   def create_link
     @post = current_user.posts.build(post_params)
     image_url
     if @post.save
-      @vote = Vote.create(user_id: @post.user_id, parent_type: "Post", parent_id: @post.id, score: 1)
+      vote
       redirect_to @post
     else
       render 'new_link'
@@ -39,7 +40,7 @@ class PostsController < ApplicationController
   def create_text
     @post = current_user.posts.build(post_params)
     if @post.save
-      @vote = Vote.create(user_id: @post.user_id, parent_type: "Post", parent_id: @post.id, score: 1)
+      vote
       redirect_to @post
     else
       render 'new_text'
