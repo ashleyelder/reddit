@@ -1,8 +1,9 @@
 class Post < ApplicationRecord
+  mount_uploader :image, ImageUploader
   belongs_to :user, optional: true
   has_many :comments, as: :parent
   has_many :votes, as: :parent
-	 validates :title, presence: true, length: { minimum: 5 }
+	validates :title, presence: true, length: { minimum: 5 }
 
   def vote_total
     self.upvotes + self.downvotes

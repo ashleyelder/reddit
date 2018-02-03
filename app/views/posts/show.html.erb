@@ -11,10 +11,12 @@
     <%= link_to @post.url do %>
       <%= simple_format @post.title %>
     <% end %>
-    <%= image_tag @post.image_url, width: '500' %>
+    <%= image_tag @post.link_url, width: '500' %>
+  <% elsif @post.try(:image) %>
+    <%= image_tag @post.image_url, width: '500'  if @post.image_url.present? %>
   <% else %>
     <%= simple_format @post.title %>
-    <% end %>
+  <% end %>
 </p>
 
 <p>

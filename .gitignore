@@ -1,5 +1,5 @@
 config/database.yml
-config/secrets.yml
+config/deploy.rb
 tmp/
 log/
 .DS_Store
@@ -12,3 +12,8 @@ elasticsearch-5.6.3/data/nodes
 *.si
 *.cfs
 elasticsearch-5.6.3/config/elasticsearch.yml
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key
+config/secrets.yml.enc
+config/secrets.yml
