@@ -3,8 +3,9 @@
     <tr>
       <td>
       <% if logged_in? %>
-        <%= button_to 'submit a new text post', {controller: 'posts', action: 'new_text'}, method: :get, class:'button' %><br/>
-        <%= button_to 'submit a new link', {controller: 'posts', action: 'new_link'}, method: :get, class:'button' %>
+        <%= button_to 'submit a text post', {controller: 'posts', action: 'new_text'}, method: :get, class:'button' %><br/>
+        <%= button_to 'submit a link', {controller: 'posts', action: 'new_link'}, method: :get, class:'button' %><br/>
+        <%= button_to 'submit an image', {controller: 'posts', action: 'new_image'}, method: :get, class:'button' %><br/>
       <% end %>
       </td>
     </tr>
