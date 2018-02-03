@@ -1,5 +1,6 @@
 config/database.yml
 config/deploy.rb
+uploads/
 tmp/
 log/
 .DS_Store
