@@ -87,7 +87,7 @@ class PostsController < ApplicationController
     )
     httparty_json = JSON.parse(response.body)
     data = httparty_json["data"]
-    data["link"]
+    @post.imgur_url = data["link"]
   end
 
   private
