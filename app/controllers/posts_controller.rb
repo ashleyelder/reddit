@@ -1,4 +1,5 @@
 require 'link_thumbnailer'
+require 'httparty'
 
 class PostsController < ApplicationController
   before_action :authenticate_logged_in, only: [:new_text, :new_link, :new_image, :create]
@@ -32,6 +33,7 @@ class PostsController < ApplicationController
 
   def create_image
     @post = current_user.posts.build(post_params)
+    upload_image
     if @post.save
       vote
       redirect_to @post
@@ -69,6 +71,23 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(title: "deleted", text: "deleted", user: nil)
+  end
+
+  def upload_image
+    file = @post.image.file.file
+    binary_file = IO.read(file)
+    response = HTTParty.post(
+      "https://api.imgur.com/3/image",
+      headers: {
+        "Authorization" => "Client-ID cfc283968cd6131"
+      },
+      body: {
+        image: binary_file
+      }
+    )
+    httparty_json = JSON.parse(response.body)
+    data = httparty_json["data"]
+    @post.imgur_url = data["link"]
   end
 
   private

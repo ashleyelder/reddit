@@ -8,12 +8,18 @@
 
 <p>
   <% if @post.try(:url) %>
-    <%= link_to @post.url do %>
+    <%= link_to @post.url do%>
       <%= simple_format @post.title %>
     <% end %>
     <%= image_tag @post.link_url, width: '500' %>
   <% elsif @post.try(:image) %>
-    <%= image_tag @post.image_url, width: '500'  if @post.image_url.present? %>
+    <%= simple_format @post.title %>
+    <%= image_tag @post.image_url, width: '500'  if @post.image_url.present? %></br>
+      <% if @post.try(:imgur_url) %>
+        <%= link_to @post.imgur_url do%>
+          <%='Imgur'%></br>
+        <% end %>
+      <% end %>
   <% else %>
     <%= simple_format @post.title %>
   <% end %>

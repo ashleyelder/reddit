@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203081133) do
+ActiveRecord::Schema.define(version: 20180207064131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180203081133) do
     t.string "subreddit"
     t.string "link_url"
     t.string "image"
+    t.string "imgur_url"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
